@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparo carosel</title>
+    <style>
+       .carosel_container {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    -webkit-scrollbar {
+        display: none;
+    }
+    scrollbar-width: none;
+}
+
+.carosel_img {
+    margin: 10px;
+    flex: 0 0 30%;
+    transition: transform 0.3s;
+}
+
+.carosel_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.carosel_img:hover {
+    margin: 20px;
+    border-radius: 20px;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.carosel_img:hover ~ .carosel_img {
+    filter: blur(5px);
+    opacity: 0.5;
+}
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="carosel_container" id="carousel">
+                <div class="carosel_img">
+                    <img src="colored badged tee grey.JPG" alt=""> 
+                </div>
+                <div class="carosel_img">
+                    <img src="coloured badged tee grey 1.jpg" alt="">
+                </div>
+                <div class="carosel_img">
+                    <img src="coloured badged tee white 1.jpg" alt="">
+                </div>
+                <div class="carosel_img">
+                    <img src="facial expression black 1.jpg" alt="">
+                </div>
+                <div class="carosel_img">
+                    <img src="facial expression black.jpg" alt="">
+                </div>
+                <div class="carosel_img">
+                    <img src="Facial Expression blue 1.jpg" alt="">
+                </div>
+                <div class="carosel_img">
+                    <img src="Facial Expression blue.JPG" alt="">
+                </div>
+                <div class="carosel_img">
+                    <img src="facial expression grey.JPG" alt="">
+                </div>
+                <div class="carosel_img">
+                    <img src="facial expression white.jpg" alt="">
+                </div>
+                <div class="carosel_img">
+                    <img src="sparo collab.jpg" alt="">
+                </div>
+                <div class="carosel_img">
+                    <img src="sparo collab 1.jpg" alt="">
+                </div>
+                <div class="carosel_img">
+                    <img src="sparo collab 3.jpg" alt="">
+                </div>
+                <div class="carosel_img">
+                    <img src="sparo collab 4.jpg" alt="">
+                </div>
+                <div class="carosel_img">
+                    <img src="sparo collab 5.jpg" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let carousel = document.getElementById('carousel');
+        let scrollWidth = carousel.scrollWidth;
+        let clientWidth = carousel.clientWidth;
+        let scrollPosition = 0;
+
+        function autoScroll() {
+            scrollPosition += 1;
+            carousel.scrollLeft = scrollPosition;
+
+            if (scrollPosition >= scrollWidth - clientWidth) {
+                scrollPosition = 0;
+            }
+
+            setTimeout(autoScroll, 10);
+        }
+
+        autoScroll();
+    </script>
+</body>
+</html>
