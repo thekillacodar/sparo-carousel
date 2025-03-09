@@ -1,2 +1,2 @@
 ﻿# sparo-carousel
-sparo dey owe me for this
+sparo dey owe me for this work
